@@ -1,0 +1,128 @@
+﻿@model PropertyDetailsModel
+
+@{
+    ViewData["Title"] = "Підтвердження Видалення";
+}
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Підтвердження Видалення Нерухомості</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin-top: 50px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ff5722;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .alert-warning {
+            background-color: #fff3cd;
+            color: #856404;
+            font-size: 1rem;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn-danger {
+            background-color: #ff5722;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: none;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+            .btn-danger:hover {
+                background-color: #e64a19;
+                transform: translateY(-2px);
+            }
+
+        .btn-secondary {
+            background-color: #f3f3f3;
+            color: #333;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: none;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+            .btn-secondary:hover {
+                background-color: #e0e0e0;
+                transform: translateY(-2px);
+            }
+
+        .form-group.text-center {
+            margin-top: 20px;
+        }
+
+        .property-details {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-top: 10px;
+        }
+
+            .property-details p {
+                margin: 5px 0;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-title">
+            <h1>Підтвердження Видалення</h1>
+        </div>
+
+        <div class="alert alert-warning text-center">
+            <strong>Ви впевнені, що хочете видалити цю нерухомість?</strong>
+            <div class="property-details">
+                <p><strong>Назва:</strong> @Model.Name</p>
+                <p><strong>Тип:</strong> @Model.Category</p>
+                <p><strong>Ціна:</strong> @Model.Price</p>
+            </div>
+        </div>
+
+        <form method="post">
+            @Html.AntiForgeryToken()
+
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-danger">Так, Видалити</button>
+                <a href="@Url.Action("Index", "Admin")" class="btn btn-secondary">Ні, повернутися до списку</a>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

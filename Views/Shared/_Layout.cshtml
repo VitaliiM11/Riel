@@ -1,0 +1,219 @@
+﻿@*<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - pharma</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Crimson+Text:400,400i" rel="stylesheet">
+        <link rel="stylesheet" href="~/css/fontstyle.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="~/css/bootstrap.min.css">
+        <link rel="stylesheet" href="~/css/magnific-popup.css">
+        <link rel="stylesheet" href="~/css/jquery-ui.css">
+        <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+
+
+        <link rel="stylesheet" href="~/css/aos.css">
+
+        <link rel="stylesheet" href="~/css/style.css">
+
+    </head>
+    <body>
+        <header>
+            <div class="site-navbar py-2">
+
+                <div class="search-wrap">
+                    <div class="container">
+                        <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
+                        <form action="#" method="post">
+                            <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
+                        </form>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="logo">
+                            <div class="site-logo">
+                                <a asp-controller="Home" asp-action="Index" class="js-logo-clone">Pharma</a>
+                            </div>
+                        </div>
+                        <div class="main-nav d-none d-lg-block">
+                            <nav class="site-navigation text-right text-md-center" role="navigation">
+                                <ul class="site-menu js-clone-nav d-none d-lg-block">
+                                    <li><a asp-controller="Home" asp-action="Index" class="js-logo-clone">Головна</a></li>
+                                    <li class="has-children">
+                                        <a asp-controller="Tovar" asp-action="Shop">Каталог</a>
+
+                                    </li>
+                                    <li><a asp-controller="Home" asp-action="About">Про нас</a></li>
+                                    <li><a asp-controller="Home" asp-action="Contact">Зв'язок</a></li>
+                                    <li><form asp-controller="Tovar" asp-action="Find">
+                                            <input name="name" class="form-control" type="search" placeholder="Введіть назву" aria-label="Search">
+                                        </form>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                        </div>
+                        <div class="icons">
+                            <a asp-controller="User" asp-action="SignIn" class="icons-btn d-inline-block bag">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+
+                        <div class="block-7">
+                            <h3 class="footer-heading mb-4">Про Нас</h3>
+                            <p>
+                                Ми гарантуємо зручність і мобільність замовлення всього каталогу медико-фармацевтичної продукції.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3 mx-auto mb-5 mb-lg-0">
+                        <h3 class="footer-heading mb-4">Швидкий доступ</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Ліки</a></li>
+                            <li><a href="#">Вітаміни</a></li>
+                            <li><a href="#">Засоби гігієни</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="block-5 mb-5">
+                            <h3 class="footer-heading mb-4">Контактна Інформація</h3>
+                            <ul class="list-unstyled">
+                                <li class="address">
+                                    м. Львів, вул. Пасічна, 93.
+                                </li>
+                                <li class="phone"><a href="tel://0800302060">0 800 30 20 60</a></li>
+                                <li class="email">pharmaoffice@marketuniversal.com.ua</li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @RenderSection("Scripts", required: false)
+    </body>
+    </html>*@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Riel Company</title>
+
+    <!-- Link Bootstrap or any other CSS libraries if needed -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98..." crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Include Bootstrap 4 CDN to keep the design consistent -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98..." crossorigin="anonymous">
+
+    <!-- Ensure this is the only instance of Bootstrap CSS -->
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <!-- Avoid redundancy, use a single version of Bootstrap -->
+
+    <style>
+        /* Global styles */
+        body {
+            background-color: #f0f4f8; /* Set a custom background color */
+            font-family: Arial, sans-serif;
+            color: #333; /* Default text color */
+        }
+
+        .container {
+            padding-top: 20px;
+        }
+
+        /* Additional global styling */
+        .navbar {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .navbar-nav li {
+            margin-right: 30px; /* Adjust the value as needed */
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            height: 50px; /* Set footer height */
+            display: flex;
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+        }
+    </style>
+
+    @* Link your custom CSS file if you prefer to use an external stylesheet *@
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="font-size: 22px !important">
+        <a class="navbar-brand" href="/">Riel Company</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Головна</a></li>
+                <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Catalog">Каталог</a></li>
+                <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="About">Про нас</a></li>
+                <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Contact">Контакти</a></li>
+                <li class="nav-item">
+                    <a asp-controller="User" asp-action="SignIn" class="nav-link icons-btn d-inline-block bag">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; @DateTime.Now.Year - Riel Company</p>
+    </footer>
+
+    <!-- JavaScript (Bootstrap, jQuery) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

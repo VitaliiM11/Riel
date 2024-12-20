@@ -1,0 +1,120 @@
+﻿@{
+    ViewData["Title"] = "Вхід";
+}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Crimson+Text:400,400i" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/style.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <style>
+        /* Global Selection Styling */
+        ::selection {
+            background-color: #b5e2e7;
+        }
+
+        ::-moz-selection {
+            background-color: #8ac7d8;
+        }
+
+        /* Login Box Styling */
+        #logbox {
+            padding: 40px;
+            margin: 60px auto;
+            width: 400px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        h2 {
+            
+            color: #333;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .input {
+            width: 90%;
+            height: 45px;
+            margin: 10px auto;
+            padding: 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+            .input:focus {
+                outline: none;
+                border-color: #3CC;
+            }
+
+        .inputButton {
+            width: 90%;
+            height: 45px;
+            margin: 20px auto;
+            background-color: #ff5722; /* Updated color */
+            color: #fff;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+            .inputButton:hover {
+                background-color: #e64a19; /* Slightly darker shade for hover effect */
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+
+            .inputButton:focus {
+                outline: none;
+            }
+
+        .text-center {
+            font-family: 'Rubik', sans-serif;
+            color: #666;
+        }
+
+            .text-center a {
+                color: #ff5722; /* Updated color */
+                text-decoration: none;
+                font-weight: 700;
+                transition: color 0.3s;
+            }
+
+                .text-center a:hover {
+                    color: #e64a19; /* Slightly darker shade for hover effect */
+                }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-md-12">
+            <div id="logbox">
+                <form id="signin" method="post">
+                    <h2>Вхід</h2>
+                    <input name="email" type="email" placeholder="Введіть пошту" required="required" class="input pass" />
+                    <input name="password" type="password" placeholder="Введіть пароль" required="required" class="input pass" />
+                    <input type="submit" value="УВІЙТИ" class="inputButton" />
+                    <div class="text-center">
+                        Ще немає акаунту? <a asp-controller="User" asp-action="SignUp" id="">Реєстрація</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

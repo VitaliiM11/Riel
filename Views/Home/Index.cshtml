@@ -1,0 +1,400 @@
+﻿@{
+    ViewData["Title"] = "Головна";
+}
+@*<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - pharma</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Crimson+Text:400,400i" rel="stylesheet">
+        <link rel="stylesheet" href="~/css/fontstyle.css">
+
+        <link rel="stylesheet" href="~/css/bootstrap.min.css">
+        <link rel="stylesheet" href="~/css/magnific-popup.css">
+        <link rel="stylesheet" href="~/css/jquery-ui.css">
+        <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+
+
+        <link rel="stylesheet" href="~/css/aos.css">
+
+        <link rel="stylesheet" href="~/css/style.css">
+
+    </head>
+    <body>
+        <div class="site-blocks-cover" style="background-image: url('images/hero_1.jpg');">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 mx-auto order-lg-2 align-self-center">
+                        <div class="site-block-cover-content text-center">
+                            <h2 class="sub-title">Ефективна медицина, великий вибір товарів</h2>
+                            <h1>Вітаємо у Pharma</h1>
+                            <p>
+                                <a asp-controller="Tovar" asp-action="Shop" class="btn btn-primary px-5 py-3">Купити зараз</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="site-section">
+            <div class="container">
+                <div class="row align-items-stretch section-overlap">
+                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                        <div class="banner-wrap bg-primary h-100">
+                            <a href="#" class="h-100">
+                                <h5>Безкоштовна <br> Доставка</h5><br/>
+                                <p>
+                                    Безкоштовна доставка
+                                    <br />замовлень на суму від 500 грн.
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                        <div class="banner-wrap h-100">
+                            <a href="#" class="h-100">
+                                <h5>Сезонні <br> Знижки До 50% </h5><br />
+                                <p>
+                                    Слідкуйте за оновленнями
+                                    <br /> на сайті.
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                        <div class="banner-wrap bg-warning h-100">
+                            <a href="#" class="h-100">
+                                <h5>Наявність <br> Бонусних Карток</h5><br />
+                                <p>
+                                    Накопичуйте бонуси та отримуйте знижку при покупці
+
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="site-section">
+            <div class="container">
+                <div class="row">
+                    <div class="title-section text-center col-12">
+                        <h2 class="text-uppercase">Популярні товари</h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6 col-lg-4 text-center item mb-4">
+                        <span class="tag">Sale</span>
+                        <a href="shop-single.html"> <img src="images/product_01.png" alt="Image"></a>
+                        <h3 class="text-dark"><a href="shop-single.html">Bioderma</a></h3>
+                        <p class="price"><del>95.00</del> &mdash; $55.00</p>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 text-center item mb-4">
+                        <a href="shop-single.html"> <img src="images/product_02.png" alt="Image"></a>
+                        <h3 class="text-dark"><a href="shop-single.html">Chanca Piedra</a></h3>
+                        <p class="price">$70.00</p>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 text-center item mb-4">
+                        <a href="shop-single.html"> <img src="images/product_03.png" alt="Image"></a>
+                        <h3 class="text-dark"><a href="shop-single.html">Umcka Cold Care</a></h3>
+                        <p class="price">$120.00</p>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 text-center item mb-4">
+                        <span class="tag">Sale</span>
+                        <a href="shop-single.html"> <img src="images/product_04.png" alt="Image"></a>
+                        <h3 class="text-dark"><a href="shop-single.html">Cetyl Pure</a></h3>
+                        <p class="price"><del>45.00</del> &mdash; $20.00</p>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 text-center item mb-4">
+                        <a href="shop-single.html"> <img src="images/product_05.png" alt="Image"></a>
+                        <h3 class="text-dark"><a href="shop-single.html">CLA Core</a></h3>
+                        <p class="price">$38.00</p>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 text-center item mb-4">
+                        <span class="tag">Sale</span>
+                        <a href="shop-single.html"> <img src="images/product_06.png" alt="Image"></a>
+                        <h3 class="text-dark"><a href="shop-single.html">Poo Pourri</a></h3>
+                        <p class="price"><del>$89</del> &mdash; $38.00</p>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-12 text-center">
+                        <a href="shop.html" class="btn btn-primary px-4 py-3">Переглянути всі товари</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="site-section bg-secondary bg-image" style="background-image: url('images/bg_2.jpg');">
+            <div class="container">
+                <div class="row align-items-stretch">
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <a href="#" class="banner-1 h-100 d-flex" style="background-image: url('images/bg_1.jpg');">
+                            <div class="banner-1-inner align-self-center">
+                                <h2>Pharma Товари</h2>
+                                <p>
+                                    Широкий асортимент ліків і товарів супутньої групи. Ми працюємо з найбільшими і перевіреними часом постачальниками в Україні.
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <a href="#" class="banner-1 h-100 d-flex" style="background-image: url('images/bg_2.jpg');">
+                            <div class="banner-1-inner ml-auto  align-self-center">
+                                <h2>Перевірено експертами</h2>
+                                <p>
+                                    Всі ліки купуються у офіційних дистриб'юторів. Нас регулярно перевіряє Державна служба України з лікарських засобів.
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        </div>
+    </body>
+    </html>*@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* Загальні стилі */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Герой-секція */
+        .hero-section {
+            background-image: url('images/fon.jpg');
+            background-size: cover; /* Ensures the image covers the entire section */
+            background-position: center; /* Centers the image within the section */
+            background-repeat: no-repeat; /* Prevents image tiling */
+            color: black;
+            padding: 100px 0;
+            text-align: center;
+            height: 500px; /* Set a fixed height, adjust as needed */
+        }
+
+            .hero-section h1 {
+                font-size: 54px;
+                font-weight: bold;
+            }
+
+            .hero-section p {
+                font-size: 20px;
+            }
+
+        .btn-custom {
+            background-color: #ff5722;
+            margin-top: 200px;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 30px;
+        }
+
+        /* Секція "Про нас" */
+        .about-section {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+
+            .about-section h2 {
+                font-size: 36px;
+                color: #333;
+            }
+
+            .about-section p {
+                font-size: 18px;
+                color: #555;
+            }
+
+        /* Секція "Продукти" */
+        .products-section {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+
+        .product-card {
+            transition: transform 0.3s;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 350px;
+            text-align: center;
+        }
+
+            .product-card img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+
+            .product-card:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            }
+
+        /* Секція "Відгуки" */
+        .testimonials-section {
+            background: #333;
+            color: #fff;
+            padding: 60px 0;
+        }
+
+        .testimonial {
+            font-style: italic;
+            font-size: 18px;
+        }
+
+        .customer-name {
+            font-weight: bold;
+            color: #ff5722;
+        }
+        /* Remove default link styling */
+        .product-link {
+            text-decoration: none;
+            color: inherit; /* Inherit text color from the container */
+            display: block; /* Make anchor fill the full column */
+        }
+
+            /* Optional: Add hover effect */
+            .product-link:hover .product-card {
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow on hover */
+                transform: scale(1.02); /* Slightly enlarges the card */
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+            }
+        /* Base link style */
+        .product-link {
+            text-decoration: none;
+            color: inherit; /* Inherit text color from the surrounding elements */
+        }
+
+            /* Ensure link color remains consistent on all states */
+            .product-link:link,
+            .product-link:visited {
+                color: inherit; /* Keeps the link color the same even after it’s visited */
+            }
+
+            .product-link:hover {
+                color: inherit; /* Optional, keeps color the same on hover */
+            }
+
+                /* Optional: Add a hover effect without changing color */
+                .product-link:hover .product-card {
+                    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow on hover */
+                    transform: scale(1.02); /* Slightly enlarges the card */
+                    transition: transform 0.2s ease, box-shadow 0.2s ease;
+                }
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Герой-секція -->
+    <div class="hero-section">
+        <h1>Ласкаво просимо до Ріел Компанії</h1>
+        <p>Ми є лідерами в інноваційних рішеннях для кращого майбутнього.</p>
+        <a  asp-controller="Home" asp-action="About" class="btn btn-custom">Дізнатись більше</a>
+    </div>
+
+
+    <!-- Секція "Продукти" -->
+    <div class="products-section">
+        <div class="container">
+            <h2 class="text-center">Нерухомість</h2>
+            <div class="row mt-4">
+                <!-- Продукт 1 -->
+                <div class="col-md-4 mb-4">
+                    <a href="@Url.Action("Catalog", "Home", new { filterType = "Будинок" })" class="product-link">
+                        <div class="product-card">
+                            <img src="images/ap2.jpeg" alt="Будинки">
+                            <div class="p-3">
+                                <h5>Будинки</h5>
+                                <p>Насолоджуйтесь комфортом, затишком та сучасними технологіями у вашому новому домі.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Продукт 2 -->
+                <div class="col-md-4 mb-4">
+                    <a href="@Url.Action("Catalog", "Home", new { filterType = "Квартира" })" class="product-link">
+                        <div class="product-card">
+                            <img src="images/ap3.webp" alt="Квартири">
+                            <div class="p-3">
+                                <h5>Квартири</h5>
+                                <p>Просторі та затишні квартири в сучасних комплексах з усіма зручностями.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Продукт 3 -->
+                <div class="col-md-4 mb-4">
+                    <a href="@Url.Action("Catalog", "Home", new { filterType = "Комерція" })" class="product-link">
+                        <div class="product-card">
+                            <img src="images/ap4.jpeg" alt="Комерційні приміщення">
+                            <div class="p-3">
+                                <h5>Комерційні приміщення</h5>
+                                <p>Ідеальне місце для розвитку вашого бізнесу з вигідним розташуванням і сучасними умовами.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Секція "Відгуки" -->
+    <div class="testimonials-section">
+        <div class="container text-center">
+            <h2>Відгуки клієнтів</h2>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <p class="testimonial">"Ріель Компанія змінила нашу бізнес-операцію, привівши нас до нових рівнів ефективності та успіху!"</p>
+                    <p class="customer-name">- Олексій Джонсон</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="testimonial">"Їхні консалтингові послуги допомогли нам чітко визначити напрямок розвитку, що дозволило досягти результатів швидше."</p>
+                    <p class="customer-name">- Ліна Грін</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="testimonial">"Чудове обслуговування та підтримка. Ріель Компанія завжди поряд, коли ми потребуємо допомоги!"</p>
+                    <p class="customer-name">- Сара Браун</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer class="text-center py-4">
+        <p></p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

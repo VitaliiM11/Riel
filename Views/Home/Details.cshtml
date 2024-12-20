@@ -1,0 +1,246 @@
+﻿@model PropertyDetailsModel
+@{
+    ViewData["Title"] = "Деталі нерухомості";
+    List<string> images = new List<string>() { "/images/ap1.webp", "/images/ap2.jpeg", "/images/ap3.webp" };
+}
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Деталі нерухомості - @Model.Name</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: black !important; /* Ensure all text is black */
+        }
+
+        .property-details {
+            margin-top: 30px;
+            color: black !important;
+        }
+
+            .property-details h2 {
+                font-size: 36px;
+                color: black !important; /* Ensure the heading is black */
+                font-weight: 700;
+            }
+
+        /* Image styling */
+        .property-header {
+            display: flex;
+            text-align: right;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+            .property-header img {
+                max-width: 100%; /* Ensure image doesn't exceed container width */
+                height: auto;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .property-header .text-info {
+                flex: 1;
+                margin-left: 20px;
+            }
+
+        /* Text Information */
+        .property-info p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: black !important;
+        }
+
+        .property-info strong {
+            color: black;
+        }
+
+        /* Agent info */
+        .agent-info {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+            .agent-info h4 {
+                font-size: 24px;
+                color: black;
+                font-weight: 600;
+                margin-bottom: 20px;
+            }
+
+            .agent-info p {
+                font-size: 16px;
+                line-height: 1.6;
+                color: black !important;
+            }
+
+            .agent-info a {
+                color: black;
+                text-decoration: none;
+            }
+
+                .agent-info a:hover {
+                    text-decoration: underline;
+                }
+
+        .btn-custom {
+            background-color: #ff5722;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            margin-bottom: 80px;
+        }
+
+        .slideshow-container {
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 500px; /* Set the container width */
+            height: 400px; /* Fixed height for all slides */
+            background-color: #f3f3f3; /* Optional: Background for empty space */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mySlides {
+            display: none; /* Initially hide all slides */
+            width: 100%; /* Ensure it uses the container width */
+            height: 100%; /* Enforce the height set in the container */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .original-size-img {
+            max-width: 100%; /* Prevent the image from exceeding the container's width */
+            max-height: 100%; /* Prevent the image from exceeding the container's height */
+            width: auto; /* Maintain original width when within constraints */
+            height: auto; /* Maintain original height when within constraints */
+            object-fit: contain; /* Ensure the entire image is visible without distortion */
+            display: block;
+        }
+
+        .w3-button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+            .w3-button:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+    </style>
+</head>
+<body>
+    <div class="container property-details">
+        <div class="property-header">
+            <div class="slideshow-container">
+                @if (Model.ImagesUrl.Any())
+                {
+                    foreach (var image in Model.ImagesUrl)
+                    {
+                        <div class="mySlides">
+                            <img src="@image" alt="Property Image" class="original-size-img" />
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>No images available.</p>
+                }
+
+                <!-- Left button -->
+                <button class="w3-button w3-display-left" onclick="plusDivs(-1)"
+                        style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); z-index: 100; padding: 10px;">
+                    &#10094;
+                </button>
+
+                <!-- Right button -->
+                <button class="w3-button w3-display-right" onclick="plusDivs(1)"
+                        style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); z-index: 100; padding: 10px;">
+                    &#10095;
+                </button>
+            </div>
+
+            <div class="text-info">
+                <h2>@Model.Name</h2>
+                <div class="property-info">
+                    <p><strong>Категорія:</strong> @Model.Category</p>
+                    <p><strong>Ціна:</strong> @Model.Price.ToString("C")</p>
+                    <p><strong>Розташування:</strong> @Model.Location</p>
+                    <p><strong>Площа:</strong> @Model.Area м²</p>
+                </div>
+
+                <div class="property-info">
+                    <h4 style="color: black">Детальний опис</h4>
+                    <p>@Model.Description</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Agent info section -->
+        <div class="agent-info">
+            <h4>Контакти агента</h4>
+            <p><strong>Ім'я:</strong> @Model.AgentFirstName @Model.AgentLastName</p>
+            <p><strong>Телефон:</strong> <a href="tel:@Model.AgentPhone">@Model.AgentPhone</a></p>
+            <p><strong>Email:</strong> <a href="mailto:@Model.AgentEmail">@Model.AgentEmail</a></p>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="@Url.Action("Catalog", "Home")" class="btn btn-custom">Повернутися до каталогу</a>
+        </div>
+    </div>
+
+    <script>var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            slideIndex += n;
+
+            // Loop to the first slide if we exceed the last slide
+            if (slideIndex > document.getElementsByClassName("mySlides").length) {
+                slideIndex = 1;
+            }
+
+            // Loop to the last slide if we go before the first slide
+            if (slideIndex < 1) {
+                slideIndex = document.getElementsByClassName("mySlides").length;
+            }
+
+            showDivs(slideIndex);
+        }
+
+        function showDivs(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+
+            // Hide all slides
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            // Show the current slide
+            slides[slideIndex - 1].style.display = "flex"; // Ensure it centers properly
+        }</script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
