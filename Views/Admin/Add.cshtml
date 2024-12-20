@@ -1,0 +1,182 @@
+﻿@model Property
+@{
+    ViewData["Title"] = "Додати нову нерухомість";
+}
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Додати нову нерухомість</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .admin-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ff5722;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .form-group label {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-control {
+            font-size: 1rem;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            transition: all 0.3s ease;
+            height: 50px;
+        }
+
+        .form-control:focus {
+            border-color: #ff5722;
+            box-shadow: 0 0 5px rgba(255, 87, 34, 0.25);
+        }
+
+        .btn-primary {
+            background-color: #ff5722;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: none;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #e64a19;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: #f3f3f3;
+            color: #333;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: none;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #e0e0e0;
+            transform: translateY(-2px);
+        }
+
+        textarea.form-control {
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="admin-title">
+            <h1>Додати нову нерухомість</h1>
+        </div>
+
+        <form method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="Name">Назва</label>
+                <input type="text" class="form-control" id="Name" name="Name" placeholder="Введіть назву нерухомості" required>
+            </div>
+
+            <div class="form-group">
+                <label>Категорія</label>
+                <select class="form-control" id="CategoryID" name="CategoryID" required>
+                    <option value="">Виберіть категорії</option>
+                    @foreach (var category in ViewBag.Categories as SelectList)
+                    {
+                        <option value="@category.Value">@category.Text</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Агент</label>
+                <select class="form-control" id="AgentID" name="AgentID" required>
+                    <option value="">Виберіть агента</option>
+                    @foreach (var agent in ViewBag.Agents as SelectList)
+                    {
+                        <option value="@agent.Value">@agent.Text</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Послуга</label>
+                <select class="form-control" id="TypeID" name="TypeID" required>
+                    <option value="">Виберіть послуги</option>
+                    @foreach (var type in ViewBag.Types as SelectList)
+                    {
+                        <option value="@type.Value">@type.Text</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Price">Ціна</label>
+                <input type="number" class="form-control" id="Price" name="Price" placeholder="Введіть ціну" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Location">Місцезнаходження</label>
+                <input type="text" class="form-control" id="Location" name="Location" placeholder="Введіть місто чи район" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Area">Площа (м²)</label>
+                <input type="number" class="form-control" id="Area" name="Area" placeholder="Введіть площу нерухомості" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Description">Опис</label>
+                <textarea class="form-control" id="Description" name="Description" rows="5" placeholder="Додайте детальний опис нерухомості" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="Image">Завантажити зображення</label>
+                <input type="file" class="form-control" id="Image" name="Image" accept="image/*" multiple>
+            </div>
+
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary">Додати</button>
+                <a href="@Url.Action("Index", "Admin")" class="btn btn-secondary">Скасувати</a>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
